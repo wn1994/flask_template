@@ -26,5 +26,6 @@ def configure_app(app, config):
 
     if not config:
         config = default_config.config_map['dev']
-
-    app.config.update(config)
+        app.config.from_object(config)
+    else:
+        app.config.update(config)
